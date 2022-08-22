@@ -329,8 +329,9 @@ with col1:
 
         st.write(fig)
 
-        df_stats = build_stats(df, property_name)
-        st.write(df_stats)
+        if len(df.index) != 0:
+           df_stats = build_stats(df, property_name)
+           st.write(df_stats)
 
     with tab_geoms:
         st.subheader("Analysis of internal coordinates:")
@@ -351,8 +352,9 @@ with col1:
 
         st.write(fig)
 
-        df_stats = build_stats(df, coords_name)
-        st.write(df_stats)
+        if len(df.index) != 0:
+           df_stats = build_stats(df, coords_name)
+           st.write(df_stats)
 
 
 with col2:
