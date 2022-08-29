@@ -58,10 +58,8 @@ st.write("""
 def get_data_zenodo(molecule):
     molecule = molecule.lower().replace('2-','')
     filename = 'ws22_' + molecule + '.npz'
-    ACCESS_TOKEN = "g2BdUG6QmZqXHMQ68GSNRArQqF0S8pNIJ9PMzZPhwXxpH2t308hYALrrljjC"
-    #zenodo_data_path = f'https://zenodo.org/record/6985377/files/{filename}?download=1'
-    zenodo_data_path = f'https://zenodo.org/api/files/4067bbf7-828f-4701-86ba-84c34228850c/{filename}'
-    response = requests.get(zenodo_data_path, params={'access_token': ACCESS_TOKEN})
+    zenodo_data_path = f'https://zenodo.org/record/7032334/files/{filename}?download=1'
+    response = requests.get(zenodo_data_path)
     response.raise_for_status()
     data = dict(np.load(BytesIO(response.content)))
     return data
