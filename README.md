@@ -5,7 +5,7 @@
 
 This repository contains a dashboard application developed with Streamlit to facilitate the preliminary
 data exploration of the molecular datasets available in the WS22 database hosted in the ZENODO repository
-(https://doi.org/10.5281/zenodo.6985377). The dashboard provides an interactive framework for the users
+(https://doi.org/10.5281/zenodo.7032333). The dashboard provides an interactive framework for the users
 to easily navigate through the data by visualizing the molecular conformations and anticipating statistical 
 insights via histograms and boxplots of the quantum chemical properties and geometrical features stored in
 the datasets.
