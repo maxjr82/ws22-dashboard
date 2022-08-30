@@ -321,7 +321,7 @@ with col1:
 
         if len(df.index) != 0:
            df_stats = build_stats(df, property_name)
-           st.write(df_stats)
+           st.dataframe(df_stats)
 
     with tab_geoms:
         st.subheader("Analysis of internal coordinates:")
@@ -344,7 +344,7 @@ with col1:
 
         if len(df.index) != 0:
            df_stats = build_stats(df, coords_name)
-           st.write(df_stats)
+           st.dataframe(df_stats)
 
 
 with col2:
@@ -375,16 +375,24 @@ hide_menu_style = """
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 with st.expander("📓: Computational details"):
-     comput_details = """* Program: Gaussian 09
-                         * Density functional: PBE0
-                         * Basis set: 6-311G*
-                      """
      st.markdown(
                  "* Geometries generation: Wigner sampling + Geometry interpolation\n"
                  "* Quantum chemical calculations: Gaussian09 program\n"
                  "* Density functional: PBE0 \n"
                  "* Basis set: 6-311G* "
                 )
-#     st.info(comput_details)
 
-st.text("By Max Pinheiro Jr.")
+citation_info = "Max Pinheiro Jr, Shuang Zhang, Pavlo O. Dral, & Mario Barbatti. (2022). WS22 database: combining Wigner Sampling and geometry interpolation towards\
+                 configurationally diverse molecular datasets (1.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.7032334"
+
+st.markdown("### Citation 📖")
+st.info(citation_info)
+
+st.markdown("### Contacts")
+
+"""
+[![Twitter Follow](https://img.shields.io/twitter/follow/max_jr?label=Follow)](https://twitter.com/max_jr)
+[![MAIL Badge](https://img.shields.io/badge/-max.pinheiro--jr%40univ--amu.fr-red?style=flat-square&logo=Gmail&logoColor=white&link=mailto:max.pinheiro-jr@univ-amu.fr)](mailto:max.pinheiro-jr@univ-amu.fr)
+
+(C) Max Pinheiro Jr, 2021-2022
+"""
