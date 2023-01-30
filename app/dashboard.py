@@ -221,7 +221,8 @@ def view_molecule(dataset, index, style):
 
     molview.setViewStyle({'style':'outline','color':'black','width':0.02})
     molview.setStyle(style)
-    molview.setBackgroundColor('#e7e7e7')
+    #molview.setBackgroundColor('#e7e7e7')
+    molview.setBackgroundColor('#e2e2e2')
     molview.zoomTo()
     hover_func = """
     function(atom,viewer) {
