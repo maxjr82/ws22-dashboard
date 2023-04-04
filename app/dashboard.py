@@ -54,7 +54,8 @@ st.write("""
          several quantum chemical properties calculated at the density functional theory level.
          """)
 
-@st.cache(allow_output_mutation=True, show_spinner=False)
+#@st.cache(allow_output_mutation=True, show_spinner=False)
+@st.cache_data(show_spinner=False)
 def get_data_zenodo(molecule):
     molecule = molecule.lower().replace('2-','')
     filename = 'ws22_' + molecule + '.npz'
@@ -64,7 +65,7 @@ def get_data_zenodo(molecule):
     data = dict(np.load(BytesIO(response.content)))
     return data
 
-@st.cache
+@st.cache_data
 def load_data(molecule):
     molecule = molecule.lower().replace('2-','')
     base_dir = '../final_datasets/'
@@ -377,14 +378,16 @@ st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 with st.expander("📓: Computational details"):
      st.markdown(
-                 "* Geometries generation: Wigner sampling + Geometry interpolation\n"
+                 "* Geometries generation: Wigner sampling ([Newton-X](https://newtonx.org/)) + [Geodesic interpolation](https://github.com/virtualzx-nad/geodesic-interpolate)\n"
                  "* Quantum chemical calculations: Gaussian09 program\n"
                  "* Density functional: PBE0 \n"
                  "* Basis set: 6-311G* "
                 )
 
 citation_info = "Max Pinheiro Jr, Shuang Zhang, Pavlo O. Dral, & Mario Barbatti. (2022). WS22 database: combining Wigner Sampling and geometry interpolation towards\
-                 configurationally diverse molecular datasets (1.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.7032334"
+                 configurationally diverse molecular datasets (1.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.7032334\n\n"
+citation_info += "Pinheiro Jr, M., Zhang, S., Dral, P.O. et al. WS22 database, Wigner Sampling and geometry interpolation for configurationally diverse molecular datasets﻿.\
+                  Sci Data 10, 95 (2023). https://doi.org/10.1038/s41597-023-01998-3"
 
 st.markdown("### Citation 📖")
 st.info(citation_info)
