@@ -1,7 +1,7 @@
 ase==3.22.1
-numpy==1.22.4
-pandas==1.4.3
-plotly==5.11.0
-py3Dmol==2.0.1.post1
+numpy==1.26.3
+pandas==2.2.0
+plotly==5.18.0
+py3Dmol==2.0.4
 requests==2.31.0
-streamlit==1.20.0
+streamlit==1.30.0
